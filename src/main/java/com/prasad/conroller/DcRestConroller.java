@@ -26,14 +26,14 @@ public class DcRestConroller {
 		return new ResponseEntity<>(planselection,HttpStatus.OK);
 	}
 	//apply Plan
-	@PostMapping("/applyplancitizen")
+	@PostMapping("/applyplans")
 	public ResponseEntity<Long> applyPlan(@RequestBody PlanSelectionBinding planselection){
 	Long caseNum=	dcService.UpdateCitizenPaln(planselection);
 		return new ResponseEntity<>(caseNum,HttpStatus.OK);
 		
 	}
 	//save income data
-	@PostMapping("/saveincome")
+	@PostMapping("/saveincomedata")
 	public ResponseEntity<Long> saveincome(@RequestBody IncomeBinding income){
 		
 		Long caseNum=dcService.saveIncome(income);
