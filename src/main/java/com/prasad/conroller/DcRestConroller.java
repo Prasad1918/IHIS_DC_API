@@ -20,7 +20,7 @@ import com.prasad.service.DcService;
 public class DcRestConroller {
 	@Autowired
 	DcService dcService;
-	@GetMapping("/createcasecitizen/{appid}")
+	@GetMapping("/createcase/{appid}")
 	public ResponseEntity<PlanSelectionBinding> createCase(@PathVariable Integer appid){
 	PlanSelectionBinding planselection=	dcService.createCase(appid);
 		return new ResponseEntity<>(planselection,HttpStatus.OK);
