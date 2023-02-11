@@ -20,13 +20,13 @@ import com.prasad.service.DcService;
 public class DcRestConroller {
 	@Autowired
 	DcService dcService;
-	@GetMapping("/createcase/{appid}")
+	@GetMapping("/createcasecitizen/{appid}")
 	public ResponseEntity<PlanSelectionBinding> createCase(@PathVariable Integer appid){
 	PlanSelectionBinding planselection=	dcService.createCase(appid);
 		return new ResponseEntity<>(planselection,HttpStatus.OK);
 	}
 	//apply Plan
-	@PostMapping("/applyplan")
+	@PostMapping("/applyplancitizen")
 	public ResponseEntity<Long> applyPlan(@RequestBody PlanSelectionBinding planselection){
 	Long caseNum=	dcService.UpdateCitizenPaln(planselection);
 		return new ResponseEntity<>(caseNum,HttpStatus.OK);
